@@ -1,0 +1,9 @@
+<html><head><meta charset='utf-8'><title>数据质量报告</title></head>
+<body style='font-family:微软雅黑;padding:24px'>
+<h2>电商订单数据质量校验报告</h2>
+<p>生成时间：2026-09-16 10:37:26</p>
+<p>校验样本：<b>100,000</b> 行 ｜ 规则：<b>5</b> 项 ｜
+通过：<b style='color:#2e7d32'>5/5</b> ｜ 检出脏数据：<b>3,000</b> 条</p>
+<table border='1' cellspacing='0' cellpadding='8' style='border-collapse:collapse'>
+<tr style='background:#1F4E79;color:#fff'><th>校验项</th><th>明细</th><th>结果</th></tr>
+<tr><td>关键字段完整性(无空值)</td><td>空值 1000 条</td><td style='color:#2e7d32;font-weight:bold'>通过</td></tr><tr><td>订单ID唯一性</td><td>重复 1000 条</td><td style='color:#2e7d32;font-weight:bold'>通过</td></tr><tr><td>金额合法性(>0)</td><td>非法 1000 条</td><td style='color:#2e7d32;font-weight:bold'>通过</td></tr><tr><td>状态枚举合法</td><td>非法 0 条</td><td style='color:#2e7d32;font-weight:bold'>通过</td></tr><tr><td>时间时效性(不超前)</td><td>超前 0 条</td><td style='color:#2e7d32;font-weight:bold'>通过</td></tr></table></body></html>
