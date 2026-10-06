@@ -4,6 +4,8 @@
 校验维度：完整性 / 唯一性 / 一致性 / 时效性
 说明：自带 10 万行合成样本（约 1% 注入脏数据，用于演示框架检出能力），开箱即跑。
 """
+import random
+
 import pandas as pd
 import pytest
 from datetime import datetime, timedelta
@@ -24,7 +26,6 @@ def make_sample() -> pd.DataFrame:
         "create_time": [(datetime(2026, 1, 1) + timedelta(minutes=i)).isoformat() for i in rng],
     })
     idx = list(range(N))
-    import random
     random.seed(42)
     # 完整性：~1% user_id 置空
     for i in random.sample(idx, N // 100):
