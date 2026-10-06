@@ -10,7 +10,7 @@
 Python · Pytest · Pandas · Pytest-HTML
 
 ## 项目亮点
-- **规则化校验**：5 类数据质量规则（完整性 / 一致性 / 唯一性 / 时效性 / 业务合理性）
+- **规则化校验**：4 类数据质量规则（完整性 / 一致性 / 唯一性 / 时效性），5 条用例
 - **大样本验证**：10 万行样本一次校验，检出 3,000 条脏数据
 - **可视化报告**：`run_report.py` 生成 HTML 质量报告
 - **可复用**：可作为数据团队质量门禁嵌入流水线
@@ -18,7 +18,7 @@ Python · Pytest · Pandas · Pytest-HTML
 ## 目录结构
 ```
 data-quality-test/
-├── test_order_quality.py  # 5 类校验规则（pytest 用例）
+├── test_order_quality.py  # 4 类校验规则（pytest 用例）
 ├── run_report.py          # 运行全部规则并生成 report.html
 ├── pytest.ini
 ├── requirements.txt
@@ -34,4 +34,4 @@ python run_report.py   # 生成 report.html 可视化报告
 
 ## 测试结果
 - ✅ **5/5 用例全部通过**
-- 10 万行样本 → 检出 3,000 条脏数据（缺失 / 重复 / 负值 / 状态非法 / 时间倒挂）
+- 10 万行样本 → 检出 3,000 条脏数据（缺失 / 重复 / 负值；状态枚举与时效性为 0 违规 sanity check）
